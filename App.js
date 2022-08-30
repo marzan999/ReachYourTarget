@@ -73,9 +73,9 @@ const UselessTextInput = () => {
       setModalVisible(true);
       let changedValue = value;
       if(number1 > changedValue){
-        setResult('Sorry');
+        setResult('Sorry, You could not reach your target. Better luck next time.');
       }else{
-        setResult('Congratulations!');
+        setResult('Congratulations, You have reached your target.');
       }
     }else{
       alert('Vai input den!');
@@ -85,7 +85,10 @@ const UselessTextInput = () => {
   return (
     <SafeAreaView>
       <Text style={styles.text}>Reach Your Target</Text>
-      <Text style={styles.text1}>Type your goal</Text>
+
+    <View style={styles.all}>
+
+    <Text style={styles.text1}>Type your goal</Text>
       <TextInput
         style={styles.input}
         onChangeText={onChangeNumber1}
@@ -147,6 +150,8 @@ const UselessTextInput = () => {
       </TouchableOpacity>
       </View>
       </Modal>
+    </View>
+
     </SafeAreaView>
   );
 };
@@ -157,20 +162,22 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    borderRadius: 15,
+    borderRadius: 20,
+    borderColor: 'tomato'
   },
   text: {
-    paddingTop: 70,
+    paddingTop: 100,
     textAlign: "center",
     justifyContent: "center",
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#FF4500",
   },
   text1: {
-    paddingLeft: 13,
-    paddingTop: 25,
+    paddingLeft: 17,
+    paddingTop: 30,
     fontWeight: "bold",
+    fontSize: 22
   },
   resultView: {
     flexDirection: 'row',
@@ -187,18 +194,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: 100,
     borderRadius: 20,
+    borderColor: 'blue'
   },
   textView: {
     borderWidth: 1,
-    width: 100,
-    borderRadius: 20
+    width: 200,
+    borderRadius: 20, 
+    borderColor: 'blue'
   },
   checkButton: {
-    width: '50%',
+    width: '40%',
     borderWidth: 1,
     borderColor: 'tomato',
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: 35,
     borderRadius: 20
   },
   checkButtonText: {
@@ -218,6 +227,14 @@ const styles = StyleSheet.create({
   resetButtonText: {
     textAlign: 'center',
     color: 'blue'
+  }, 
+  all: {
+    //justifyContent: 'center',
+    //alignItems: 'center'
+    marginTop: 30
+  }, 
+  modalText: {
+    fontSize: 55
   }
 });
 
